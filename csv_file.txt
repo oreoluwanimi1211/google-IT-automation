@@ -1,0 +1,7 @@
+Name: Sabrina Green, Phone: 802-867-5309, Role: System Administrator
+
+Name: Eli Jones, Phone: 684-3481127, Role: IT specialist
+
+Name: Melody Daniels, Phone: 846-687-7436, Role: Programmer
+
+Name: Charlie Rivera, Phone: 698-746-3357, Role: Web Developer

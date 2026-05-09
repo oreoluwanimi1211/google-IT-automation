@@ -1,0 +1,77 @@
+PS C:\Users\oladi\OneDrive\Documents\ALL MY PROGRAMMING FILE\Google IT Automation file> & C:\Users\oladi\AppData\Local\Programs\Python\Python314\python.exe "c:/Users/oladi/OneDrive/Documents/ALL MY PROGRAMMING FILE/Google IT Automation file/managing_file.py"
+None
+PS C:\Users\oladi\OneDrive\Documents\ALL MY PROGRAMMING FILE\Google IT Automation file> & C:\Users\oladi\AppData\Local\Programs\Python\Python314\python.exe "c:/Users/oladi/OneDrive/Documents/ALL MY PROGRAMMING FILE/Google IT Automation file/managing_file.py"
+Traceback (most recent call last):
+  File "c:\Users\oladi\OneDrive\Documents\ALL MY PROGRAMMING FILE\Google IT Automation file\managing_file.py", line 2, in <module>
+    print(os.remove('newfile.txt'))
+          ~~~~~~~~~^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'newfile.txt'
+PS C:\Users\oladi\OneDrive\Documents\ALL MY PROGRAMMING FILE\Google IT Automation file> & C:\Users\oladi\AppData\Local\Programs\Python\Python314\python.exe "c:/Users/oladi/OneDrive/Documents/ALL MY PROGRAMMING FILE/Google IT Automation file/managing_file.py"
+<_io.TextIOWrapper name='newfile.txt' mode='w' encoding='cp1252'>
+PS C:\Users\oladi\OneDrive\Documents\ALL MY PROGRAMMING FILE\Google IT Automation file> & C:\Users\oladi\AppData\Local\Programs\Python\Python314\python.exe "c:/Users/oladi/OneDrive/Documents/ALL MY PROGRAMMING FILE/Google IT Automation file/managing_file.py"
+<_io.TextIOWrapper name='newfile.txt' mode='w' encoding='cp1252'>
+None
+PS C:\Users\oladi\OneDrive\Documents\ALL MY PROGRAMMING FILE\Google IT Automation file> & C:\Users\oladi\AppData\Local\Programs\Python\Python314\python.exe "c:/Users/oladi/OneDrive/Documents/ALL MY PROGRAMMING FILE/Google IT Automation file/managing_file.py"
+Traceback (most recent call last):
+  File "c:\Users\oladi\OneDrive\Documents\ALL MY PROGRAMMING FILE\Google IT Automation file\managing_file.py", line 5, in <module>
+    for f  in file:
+              ^^^^
+io.UnsupportedOperation: not readable
+PS C:\Users\oladi\OneDrive\Documents\ALL MY PROGRAMMING FILE\Google IT Automation file> & C:\Users\oladi\AppData\Local\Programs\Python\Python314\python.exe "c:/Users/oladi/OneDrive/Documents/ALL MY PROGRAMMING FILE/Google IT Automation file/managing_file.py"
+<_io.TextIOWrapper name='newfile.txt' mode='w' encoding='cp1252'>
+PS C:\Users\oladi\OneDrive\Documents\ALL MY PROGRAMMING FILE\Google IT Automation file> & C:\Users\oladi\AppData\Local\Programs\Python\Python314\python.exe "c:/Users/oladi/OneDrive/Documents/ALL MY PROGRAMMING FILE/Google IT Automation file/managing_file.py"
+<_io.TextIOWrapper name='newfile.txt' mode='w' encoding='cp1252'>
+None
+PS C:\Users\oladi\OneDrive\Documents\ALL MY PROGRAMMING FILE\Google IT Automation file> & C:\Users\oladi\AppData\Local\Programs\Python\Python314\python.exe "c:/Users/oladi/OneDrive/Documents/ALL MY PROGRAMMING FILE/Google IT Automation file/managing_file.py"
+<_io.TextIOWrapper name='newfile.txt' mode='w' encoding='cp1252'>
+PS C:\Users\oladi\OneDrive\Documents\ALL MY PROGRAMMING FILE\Google IT Automation file> & C:\Users\oladi\AppData\Local\Programs\Python\Python314\python.exe "c:/Users/oladi/OneDrive/Documents/ALL MY PROGRAMMING FILE/Google IT Automation file/managing_file.py"
+<_io.TextIOWrapper name='newfile.txt' mode='w' encoding='cp1252'>
+Traceback (most recent call last):
+  File "c:\Users\oladi\OneDrive\Documents\ALL MY PROGRAMMING FILE\Google IT Automation file\managing_file.py", line 9, in <module>
+    r_name = os.rename("newfile.txt", "new_file.txt")
+FileExistsError: [WinError 183] Cannot create a file when that file already exists: 'newfile.txt' -> 'new_file.txt'
+PS C:\Users\oladi\OneDrive\Documents\ALL MY PROGRAMMING FILE\Google IT Automation file> & C:\Users\oladi\AppData\Local\Programs\Python\Python314\python.exe "c:/Users/oladi/OneDrive/Documents/ALL MY PROGRAMMING FILE/Google IT Automation file/managing_file.py"
+<_io.TextIOWrapper name='newfile.txt' mode='w' encoding='cp1252'>
+None
+Traceback (most recent call last):
+  File "c:\Users\oladi\OneDrive\Documents\ALL MY PROGRAMMING FILE\Google IT Automation file\managing_file.py", line 9, in <module>
+    r_name = os.rename("newfile.txt", "new_file.txt")
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'newfile.txt' -> 'new_file.txt'
+PS C:\Users\oladi\OneDrive\Documents\ALL MY PROGRAMMING FILE\Google IT Automation file> & C:\Users\oladi\AppData\Local\Programs\Python\Python314\python.exe "c:/Users/oladi/OneDrive/Documents/ALL MY PROGRAMMING FILE/Google IT Automation file/managing_file.py"
+<_io.TextIOWrapper name='newfile.txt' mode='w' encoding='cp1252'>
+None
+Traceback (most recent call last):
+  File "c:\Users\oladi\OneDrive\Documents\ALL MY PROGRAMMING FILE\Google IT Automation file\managing_file.py", line 9, in <module>
+    r_name = os.rename("newfile.txt", "new_file.txt")
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'newfile.txt' -> 'new_file.txt'
+PS C:\Users\oladi\OneDrive\Documents\ALL MY PROGRAMMING FILE\Google IT Automation file> & C:\Users\oladi\AppData\Local\Programs\Python\Python314\python.exe "c:/Users/oladi/OneDrive/Documents/ALL MY PROGRAMMING FILE/Google IT Automation file/managing_file.py"
+<_io.TextIOWrapper name='newfile.txt' mode='w' encoding='cp1252'>
+None
+Traceback (most recent call last):
+  File "c:\Users\oladi\OneDrive\Documents\ALL MY PROGRAMMING FILE\Google IT Automation file\managing_file.py", line 9, in <module>
+    r_name = os.rename("newfile.txt", "new_file.txt")
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'newfile.txt' -> 'new_file.txt'
+PS C:\Users\oladi\OneDrive\Documents\ALL MY PROGRAMMING FILE\Google IT Automation file> & C:\Users\oladi\AppData\Local\Programs\Python\Python314\python.exe "c:/Users/oladi/OneDrive/Documents/ALL MY PROGRAMMING FILE/Google IT Automation file/managing_file.py"
+<_io.TextIOWrapper name='newfile.txt' mode='w' encoding='cp1252'>
+None
+Traceback (most recent call last):
+  File "c:\Users\oladi\OneDrive\Documents\ALL MY PROGRAMMING FILE\Google IT Automation file\managing_file.py", line 9, in <module>
+    r_name = os.rename("newfile.txt", "new_file.txt")
+FileNotFoundError: [WinError 2] The system cannot find the file specified: 'newfile.txt' -> 'new_file.txt'
+PS C:\Users\oladi\OneDrive\Documents\ALL MY PROGRAMMING FILE\Google IT Automation file> & C:\Users\oladi\AppData\Local\Programs\Python\Python314\python.exe "c:/Users/oladi/OneDrive/Documents/ALL MY PROGRAMMING FILE/Google IT Automation file/managing_file.py"
+<_io.TextIOWrapper name='newfile.txt' mode='w' encoding='cp1252'>
+True
+PS C:\Users\oladi\OneDrive\Documents\ALL MY PROGRAMMING FILE\Google IT Automation file> & C:\Users\oladi\AppData\Local\Programs\Python\Python314\python.exe "c:/Users/oladi/OneDrive/Documents/ALL MY PROGRAMMING FILE/Google IT Automation file/managing_file.py"
+<_io.TextIOWrapper name='newfile.txt' mode='w' encoding='cp1252'>
+Traceback (most recent call last):
+  File "c:\Users\oladi\OneDrive\Documents\ALL MY PROGRAMMING FILE\Google IT Automation file\managing_file.py", line 9, in <module>
+    r_name = os.rename("newfile.txt", "new_file.txt")
+FileExistsError: [WinError 183] Cannot create a file when that file already exists: 'newfile.txt' -> 'new_file.txt'
+PS C:\Users\oladi\OneDrive\Documents\ALL MY PROGRAMMING FILE\Google IT Automation file> & C:\Users\oladi\AppData\Local\Programs\Python\Python314\python.exe "c:/Users/oladi/OneDrive/Documents/ALL MY PROGRAMMING FILE/Google IT Automation file/managing_file.py"
+<_io.TextIOWrapper name='newfile.txt' mode='w' encoding='cp1252'>
+True
+0
+PS C:\Users\oladi\OneDrive\Documents\ALL MY PROGRAMMING FILE\Google IT Automation file> 
+
+
+
