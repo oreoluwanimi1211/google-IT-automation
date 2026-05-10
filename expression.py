@@ -116,3 +116,213 @@ print(re.search(pattern, "2my_variable1"))
 
 
 # r”^/(.+)/([^/]+)/$” This line of code is often used to extract specific parts of URLs or file paths, such as the 
+
+
+import re
+def check_web_address(text):
+  pattern = r"^[\w\.-]+\.[a-zA-Z]{2,}$"
+  result = re.search(pattern, text)
+  return result != None
+
+print(check_web_address("gmail.com")) # True
+print(check_web_address("www@google")) # False
+print(check_web_address("www.Coursera.org")) # True
+print(check_web_address("web-address.com/homepage")) # False
+print(check_web_address("My_Favorite-Blog.US")) # True
+
+
+import re
+def contains_acronym(text):
+  pattern = r"\([A-Za-z0-9]{2,}\)" 
+  result = re.search(pattern, text)
+  return result != None
+
+print(contains_acronym("Instant messaging (IM) is a set of communication technologies used for text-based communication")) # True
+print(contains_acronym("American Standard Code for Information Interchange (ASCII) is a character encoding standard for electronic communication")) # True
+print(contains_acronym("Please do NOT enter without permission!")) # False
+print(contains_acronym("PostScript is a fourth-generation programming language (4GL)")) # True
+print(contains_acronym("Have fun using a self-contained underwater breathing apparatus (Scuba)!")) # Tru
+
+
+import re
+
+def correct_function(text):
+  result = re.search(r"\s\d{5}(-\d{4})?", text)  # Corrected regex pattern with space
+  return result is not None
+
+def check_zip_code(text):
+  return correct_function(text)  # Call the correct_function
+
+# Call the check_zip_code function with test cases
+print(check_zip_code("The zip codes for New York are 10001 thru 11104."))  # True
+print(check_zip_code("90210 is a TV show"))  # False (no space before 90210)
+print(check_zip_code("Their address is: 123 Main Street, Anytown, AZ 85258-0001."))  # True
+print(check_zip_code("The Parliament of Canada is at 111 Wellington St, Ottawa, ON K1A0A9."))  # False
+
+import re
+result = re.search(r"^(\w*), (\w*)$", "Lovelace, Ada")
+print(result)
+print(result.groups())
+print(result[0])
+print(result[1])
+print(result[2])
+"{} {}".format(result[2], result[1])
+
+
+import re
+def rearrange_name(name):
+    result = re.search(r"^(\w*), (\w*)$", name)
+    if result is None:
+        return name
+    return "{} {}".format(result[2], result[1])
+rearrange_name("Lovelace, Ada")
+
+
+import re
+def rearrange_name(name):
+    result = re.search(r"^(\w*), (\w*)$", name)
+    if result is None:
+        return name
+    return "{} {}".format(result[2], result[1])
+rearrange_name("Ritchie, Dennis")
+
+import re
+def rearrange_name(name):
+    result = re.search(r"^([\w \.-]*), ([\w \.-]*)$", name)
+    if result == None:
+        return name
+    return "{} {}".format(result[2], result[1])
+rearrange_name("Hopper, Grace M.")
+
+import re
+def rearrange_name(name):
+  result = re.search(r"^(\w*), (\w*)$", name)
+  if result == None:
+    return name
+  return "{} {}".format(result[2], result[1])
+
+name=rearrange_name("Kennedy, John F.")
+print(name)
+
+print(re.search(r"[a-zA-Z]{5}", "a ghost"))
+
+print(re.search(r"[a-zA-Z]{5}", "a scary ghost appeared"))
+
+print(re.findall(r"[a-zA-Z]{5}", "a scary ghost appeared"))
+
+
+re.findall(r"\b[a-zA-Z]{5}\b", "A scary ghost appeared")
+
+
+print(re.findall(r"\w{5,10}", "I really like strawberries"))
+
+print(re.findall(r"\w{5,}", "I really like strawberries"))
+
+print(re.search(r"s\w{,20}", "I really like strawberries"))
+
+log = "July 31 07:51:48 mycomputer bad_process[12345]: ERROR Performing package upgrade"
+regex = r"\[(\d+)\]"
+result = re.search(regex, log)
+print(result[1])
+
+log = "July 31 07:51:48 mycomputer bad_process[12345]: ERROR Performing package upgrade"
+regex = r"\[(\d+)\]"
+result = re.search(regex, log)
+result = re.search(regex, "A completely different string that also has numbers [34567]")
+print(result[1])
+
+log = "July 31 07:51:48 mycomputer bad_process[12345]: ERROR Performing package upgrade"
+regex = r"\[(\d+)\]"
+result = re.search(regex, log)
+result = re.search(regex, "A completely different string that also has numbers [34567]")
+result = re.search(regex, "99 elephants in a [cage]")
+print(result[1])
+#Note that this print command results in an error as shown in the video.
+
+
+log = "July 31 07:51:48 mycomputer bad_process[12345]: ERROR Performing package upgrade"
+regex = r"\[(\d+)\]"
+result = re.search(regex, log)
+result = re.search(regex, "A completely different string that also has numbers [34567]")
+result = re.search(regex, "99 elephants in a [cage]")
+def extract_pid(log_line):
+    regex = r"\[(\d+)\]"
+    result = re.search(regex, log_line)
+    if result is None:
+        return ""
+    return result[1]
+print(extract_pid(log))
+
+
+
+log = "July 31 07:51:48 mycomputer bad_process[12345]: ERROR Performing package upgrade"
+regex = r"\[(\d+)\]"
+result = re.search(regex, log)
+result = re.search(regex, "A completely different string that also has numbers [34567]")
+result = re.search(regex, "99 elephants in a [cage]")
+def extract_pid(log_line):
+    regex = r"\[(\d+)\]"
+    result = re.search(regex, log_line)
+    if result is None:
+        return ""
+    return result[1]
+print(extract_pid(log))
+print(extract_pid("99 elephants in a [cage]"))
+
+re.split(r"[.?!]", "One sentence. Another one? And the last one!")
+
+re.split(r"([.?!])", "One sentence. Another one? And the last one!")
+
+re.sub(r"[\w.%+-]+@[\w.-]+", "[REDACTED]", "Received an email for go_nuts95@my.example.com")
+
+re.sub(r"^([\w .-]*), ([\w .-]*)$", r"\2 \1", "Lovelace, Ada")
+
+re.split(r"the|a", "One sentence. Another one? And the last one!")
+
+
+
+# dvanced regular expressions—commonly referred to as advanced regexes—are used by developers to execute complicated pattern
+# matching against strings. In this reading, you will learn about some of the common examples of advanced regular expressions.
+
+# Alterations
+# An alteration matches any one of the alternatives separated by the pipe | symbol. Let’s look at an example:
+
+#  r"location.*(London|Berlin|Madrid)" 
+
+# This line of code will match the text string location is London, location is Berlin, or location is Madrid.
+
+# Matching only at the beginning or end
+# If you use the circumflex symbol (also known as a caret symbol) ^ as the first character of your regex, it will match only if
+#  the pattern occurs at the start of the string. Alternatively, if you use the dollar sign symbol $ at the end of a regex, it will 
+# match only if the pattern occurs at the end. Let’s look at an example:
+
+# r”^My name is (\w+)” 
+
+# This line of code will match My name is Asha but not Hello. My name is Asha.
+
+# Character ranges
+# Character ranges can be used to match a single character against a set of possibilities. Let’s look at a couple of examples:
+
+# r”[A-Z] This will match a single uppercase letter.
+
+# r”[0-9$-,.] This will match any of the digits zero through nine, or the dollar sign, hyphen, comma, or period.
+
+# The two examples above are often combined with the repetition qualifiers. Let’s look at one more example:
+
+# r”([0-9]{3}-[0-9]{3}-[0-9]{4})”
+
+# This line of code will match a U.S. phone number such as 888-123-7612.
+
+# Backreferences
+# A backreference is used when using re.sub() to substitute the value of a capture group into the output. Let’s look at an example:
+
+# >>> re.sub(r”([A-Z])\.\s+(\w+)”, r”Ms. \2”, “A. Weber and B. Bellmas have joined the team.”)
+
+# This line of code will produce Ms. Weber and Ms. Bellmas have joined the team.
+
+# Lookahead
+# A lookahead matches a pattern only if it’s followed by another pattern. Let’s look at an example:
+
+# If the regex was r”(Test\d)-(?=Passed)” and the string was “Test1-Passed, Test2-Passed, Test3-Failed, Test4-Passed, Test5-Failed” the output would be:
+
+# Test1, Test2, Test4
