@@ -326,3 +326,209 @@ re.split(r"the|a", "One sentence. Another one? And the last one!")
 # If the regex was r”(Test\d)-(?=Passed)” and the string was “Test1-Passed, Test2-Passed, Test3-Failed, Test4-Passed, Test5-Failed” the output would be:
 
 # Test1, Test2, Test4
+
+
+import re
+def convert_phone_number(phone):
+  result = re.sub(r"(\d{3})-(\d{3})-(\d{4})", r"(\1) \2-\3", phone)
+  return result
+
+print(convert_phone_number("My number is 212-345-9999.")) # My number is (212) 345-9999.
+print(convert_phone_number("Please call 888-555-1234")) # Please call (888) 555-1234
+print(convert_phone_number("123-123-12345")) # 123-123-12345
+print(convert_phone_number("Phone number of Buckingham Palace is +44 303 123 7300")) # Phone number of Buckingham Palace is +44 303 123 7300
+
+
+
+import re
+def transform_comments(line_of_code):
+  result = re.sub(r"#+", "//", line_of_code)
+  return result
+
+print(transform_comments("### Start of program")) 
+# Should be "// Start of program"
+print(transform_comments("  number = 0   ## Initialize the variable")) 
+# Should be "  number = 0   // Initialize the variable"
+print(transform_comments("  number += 1   # Increment the variable")) 
+# Should be "  number += 1   // Increment the variable"
+print(transform_comments("  return(number)")) 
+# Should be "  return(number)"
+
+
+import re
+def multi_vowel_words(text):
+  pattern =r"\b\w*[aeiou]{2,}\w*\b"
+  result = re.findall(pattern, text)
+  return result
+
+print(multi_vowel_words("Life is beautiful")) 
+# ['beautiful']
+
+print(multi_vowel_words("Obviously, the queen is courageous and gracious.")) 
+# ['Obviously', 'queen', 'courageous', 'gracious']
+
+print(multi_vowel_words("The rambunctious children had to sit quietly and await their delicious dinner.")) 
+# ['rambunctious', 'quietly', 'delicious']
+
+print(multi_vowel_words("The order of a data queue is First In First Out (FIFO)")) 
+# ['queue']
+
+print(multi_vowel_words("Hello world!")) 
+# []
+
+
+import re
+def transform_record(record):
+  new_record = re.sub(r"(\d{3}-\d{3}-\d{4}|\d{3}-\d{7})", r"+1-\1", record)
+  return new_record
+
+print(transform_record("Sabrina Green,802-867-5309,System Administrator")) 
+# Sabrina Green,+1-802-867-5309,System Administrator
+
+print(transform_record("Eli Jones,684-3481127,IT specialist")) 
+# Eli Jones,+1-684-3481127,IT specialist
+
+print(transform_record("Melody Daniels,846-687-7436,Programmer")) 
+# Melody Daniels,+1-846-687-7436,Programmer
+
+print(transform_record("Charlie Rivera,698-746-3357,Web Developer")) 
+# Charlie Rivera,+1-698-746-3357,Web Developer
+
+
+import re
+def transform_record(record):
+  new_record = re.sub(r",(\d{3}-\d{3,4}-?\d{0,4}|\d{3}-\d{7})", r",+1-\1", record)
+  return new_record
+
+print(transform_record("Sabrina Green,802-867-5309,System Administrator")) 
+# Sabrina Green,+1-802-867-5309,System Administrator
+
+print(transform_record("Eli Jones,684-3481127,IT specialist")) 
+# Eli Jones,+1-684-3481127,IT specialist
+
+print(transform_record("Melody Daniels,846-687-7436,Programmer")) 
+# Melody Daniels,+1-846-687-7436,Programmer
+
+print(transform_record("Charlie Rivera,698-746-3357,Web Developer")) 
+# Charlie Rivera,+1-698-746-3357,Web Developer
+
+
+import re
+def multi_vowel_words(text):
+  pattern = r"\b\w*[aeiou]{3,}\w*\b"
+  result = re.findall(pattern, text)
+  return result
+
+print(multi_vowel_words("Life is beautiful")) 
+# ['beautiful']
+
+print(multi_vowel_words("Obviously, the queen is courageous and gracious.")) 
+# ['Obviously', 'queen', 'courageous', 'gracious']
+
+print(multi_vowel_words("The rambunctious children had to sit quietly and await their delicious dinner.")) 
+# ['rambunctious', 'quietly', 'delicious']
+
+print(multi_vowel_words("The order of a data queue is First In First Out (FIFO)")) 
+# ['queue']
+
+print(multi_vowel_words("Hello world!")) 
+# []
+
+import re
+def transform_comments(line_of_code):
+  result = re.sub(r"#+", "//", line_of_code)
+  return result
+
+print(transform_comments("### Start of program")) 
+# Should be "// Start of program"
+print(transform_comments("  number = 0   ## Initialize the variable")) 
+# Should be "  number = 0   // Initialize the variable"
+print(transform_comments("  number += 1   # Increment the variable")) 
+# Should be "  number += 1   // Increment the variable"
+print(transform_comments("  return(number)")) 
+# Should be "  return(number)"
+
+import re
+def convert_phone_number(phone):
+  result = re.sub(r"\b(\d{3})-(\d{3})-(\d{4})\b", r"(\1) \2-\3", phone)
+  return result
+
+print(convert_phone_number("My number is 212-345-9999.")) # My number is (212) 345-9999.
+print(convert_phone_number("Please call 888-555-1234")) # Please call (888) 555-1234
+print(convert_phone_number("123-123-12345")) # 123-123-12345
+print(convert_phone_number("Phone number of Buckingham Palace is +44 303 123 7300")) # Phone number of Buckingham Palace is +44 303 123 7300
+
+
+# Terms and definitions from course 2, module 3
+# Alteration: RegEx that matches any one of the alternatives separated by the pipe symbol
+
+# Backreference: This is applied when using re.sub( ) to substitute the value of a capture group into the output
+
+# Character classes: These are written inside square brackets and let us list the characters we want to match inside of those brackets
+
+# Character ranges: Ranges used to match a single character against a set of possibilities
+
+# grep: An especially easy to use yet extremely powerful tool for applying RegExes
+
+# Lookahead: RegEx that matches a pattern only if it’s followed by another pattern
+
+# Regular expression: A search query for text that's expressed by string pattern, also known as RegEx or RegExp
+
+# Wildcard: A character that can match more than one character
+
+
+#!/usr/bin/env python3
+
+# Quicklib 2 solution
+import csv
+import re
+
+
+def contains_domain(address, domain):
+  domain_pattern = r'[\w\.-]+@' + domain + '$'
+  if re.match(domain_pattern, address):
+    return True
+  return False
+
+
+def replace_domain(address, old_domain, new_domain):
+  old_domain_pattern = r'' + old_domain + '$'
+  address = re.sub(old_domain_pattern, new_domain, address)
+  return address
+
+
+def main():
+  old_domain, new_domain = 'abc.edu', 'xyz.edu'
+
+  csv_file_location = '/home/student/data/user_emails.csv'
+  report_file = '/home/student/data/updated_user_emails.csv'
+
+  user_email_list = []
+  old_domain_email_list = []
+  new_domain_email_list = []
+
+  with open(csv_file_location, 'r') as f:
+    user_data_list = list(csv.reader(f))
+    user_email_list = [data[1].strip() for data in user_data_list[1:]]
+
+  for email_address in user_email_list:
+    if contains_domain(email_address, old_domain):
+      old_domain_email_list.append(email_address)
+      new_domain_email_list.append(
+          replace_domain(email_address, old_domain, new_domain)
+      )
+
+  email_key = 'Email Address'
+  email_index = user_data_list[0].index(email_key)
+
+  for user in user_data_list[1:]:
+    if user[email_index] in old_domain_email_list:
+      index = old_domain_email_list.index(user[email_index])
+      user[email_index] = new_domain_email_list[index]
+
+  with open(report_file, 'w+') as output_file:
+    writer = csv.writer(output_file)
+    writer.writerows(user_data_list)
+
+
+main()
