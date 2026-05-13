@@ -1,0 +1,119 @@
+"""   
+helps to simplify the process of writing, organizing and executing tests. It can be
+ used to write a variety of tests including: integration, end-to-end, and functional tests. 
+ It supports automatic test discovery and generates informative test reports. 
+
+In this reading, you will learn more about pytests, how to write tests with pytest, and its fixtures.
+
+How to write tests
+Pytests are written with functions that use the operation, assert(). An assert is a commonly used 
+debugging tool in Python that allows programmers to include sanity checks in their code. They ensure
+ certain conditions or assumptions hold true during runtime. If the condition provided to assert() turns 
+ out to be false, it indicates a
+ bug in the code, an exception is raised, and halts the program’s execution. 
+ Typically, code provides an assert condition followed by an optional message. An example is: 
+
+"""
+
+def divide(a, b):
+	assert b != 0, "Cannot divide by zero"
+	return a / b
+
+"""An AssertionError message is raised
+ informing the programmer that it is not
+   possible to divide a value by zero."""
+
+
+"""Pytest fixtures
+Fixtures are used to separate parts of code that only run for tests. They are
+ reusable pieces of test setups and teardown code that are shared across multiple 
+tests. Fixtures benefit developers by assisting in keeping their tests clean and 
+avoiding code duplication. Let’s look at an example of using a pytest in Python:"""
+
+import py_test
+
+class Fruit:
+    def __init__(self, name):
+        self.name = name
+        self.cubed = False
+
+
+    def cube(self):
+        self.cubed = True
+
+
+class FruitSalad:
+    def __init__(self, *fruit_bowl):
+        self.fruit = fruit_bowl
+        self._cube_fruit()
+
+
+    def _cube_fruit(self):
+        for fruit in self.fruit:
+            fruit.cube()
+
+
+# Arrange
+@pytest.fixture
+def fruit_bowl():
+    return [Fruit("apple"), Fruit("banana")]
+
+
+def test_fruit_salad(fruit_bowl):
+    # Act
+    fruit_salad = FruitSalad(*fruit_bowl)
+
+
+    # Assert
+    assert all(fruit.cubed for fruit in fruit_salad.fruit)
+
+
+"""
+In this example, test_fruit_salad  requests fruit_bowl. When pytest recognizes this, 
+it executes the fruit_bowl fixture function and takes the object it returns into test_fruit_salad 
+as the fruit_bowl argument. 
+Key takeaways
+Pytest is a user-friendly testing framework for developers writing code in Python to
+focus on creating simple and clear tests. Pytests are written using the assert() operation to compare actual values with expected results.
+Fixtures provide developers a way to share common test data and environment configurations while ensuring consistent testing conditions.  
+"""
+
+"""
+Both unittest and pytest provide developers with tools to create robust and reliable code through different
+forms of tests. Both can be used while creating programs within Python, and it is the developer’s preference on which type they want to use.
+In this reading, you will learn about the differences between unittest and pytest, and when to use them.
+
+Key differences
+Unittest is a tool that is built directly into Python, while pytest must be imported from outside your script.
+Test discovery acts differently for each test type. Unittest has the functionality to automatically detect test
+cases within an application, but it must be called from the command line. Pytests are performed automatically
+using the prefix test_. Unittests use an object-oriented approach to write tests, while pytests use a functional approach. 
+Pytests use built-in assert statements, making tests easier to read and write. On the other hand, unittests provide special 
+assert methods like assertEqual() or assertTrue().
+
+Backward compatibility exists between unittest and pytest. Because unittest is built directly into Python,
+these test suites are more easily executed. But that doesn’t mean that pytest cannot be executed. Because of
+backward compatibility, the unittest framework can be seamlessly executed using the pytest framework without
+major modifications. This allows developers to adopt pytest gradually and integrate them into their code.
+Key takeaways
+Unittest and pytest are both beneficial to developers in executing tests on their code written in Python.
+Each one has its pros and cons, and it is up to the developer and their preference on which type of testing framework they want to use. 
+"""
+
+#!/usr/bin/env python3
+import re
+def rearrange_name(name):
+    result = re.search(r"^([\w .]*), ([\w .]*)$", name)
+    return "{} {}".format(result[2], result[1])
+from rearrange import rearrange_name
+
+rearrange_name("Lovelace, Ada")  
+
+
+
+
+
+
+
+
+
